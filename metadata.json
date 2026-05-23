@@ -1,0 +1,6 @@
+{
+  "name": "ЛізингКом",
+  "description": "Фінансовий лізинг авто і техніки для бізнесу в Україні з ліцензією НБУ.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
