@@ -65,6 +65,11 @@
         opacity: 1;
         transform: translateY(0);
       }
+      @media (max-width: 1023px) {
+        .desktop-only-important {
+          display: none !important;
+        }
+      }
     </style>
   </head>
   <body class="bg-[#F8FAFC] text-slate-800 antialiased selection:bg-orange-500 selection:text-white">
@@ -145,9 +150,59 @@
     <!--            NEW SECTION HEADER INTROS           -->
     <!-- ============================================== -->
 
+    <!-- HERO SECTION -->
+    <section data-page="home" class="page-view animate-fade-in-active bg-gradient-to-br from-slate-950 via-[#1E293B] to-slate-900 text-white pt-32 pb-12 xs:pt-36 sm:pt-28 sm:pb-16 lg:py-20 overflow-hidden relative" id="hero">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-8 items-center relative z-10">
+        
+        <!-- Hero Left Text Content -->
+        <div class="lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left">
+          <h1 class="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
+            Фінансовий лізинг легкого та вантажного транспорту та техніки <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">для всього бізнесу</span>
+          </h1>
+          <p class="text-sm sm:text-base text-slate-300 max-w-xl leading-relaxed mx-auto lg:mx-0">
+            Розвивайте свій бізнес без вилучення великих коштів із обігу. Ми купуємо потрібні активи та передаємо їх вам на вигідних умовах зі сплатою впродовж кількох років.
+          </p>
+
+          <div class="grid grid-cols-3 gap-1.5 xs:gap-3 md:gap-6 bg-white/5 border border-white/10 rounded-xl p-3 sm:p-5 backdrop-blur-md">
+            <div>
+              <p class="text-[8px] xs:text-[10px] sm:text-xs text-slate-400 uppercase tracking-normal xs:tracking-wider sm:tracking-widest font-semibold leading-normal">Авансовий платіж</p>
+              <p class="text-base xs:text-lg sm:text-2xl font-extrabold text-orange-400 mt-1">від 10%</p>
+            </div>
+            <div class="border-l border-white/10 pl-2 xs:pl-4 sm:pl-6">
+              <p class="text-[8px] xs:text-[10px] sm:text-xs text-slate-400 uppercase tracking-normal xs:tracking-wider sm:tracking-widest font-semibold leading-normal">Термін договору</p>
+              <p class="text-base xs:text-lg sm:text-2xl font-extrabold text-orange-400 mt-1">до 60 міс.</p>
+            </div>
+            <div class="border-l border-white/10 pl-2 xs:pl-4 sm:pl-6">
+              <p class="text-[8px] xs:text-[10px] sm:text-xs text-slate-400 uppercase tracking-normal xs:tracking-wider sm:tracking-widest font-semibold leading-normal">Ставка фінансування</p>
+              <p class="text-base xs:text-lg sm:text-2xl font-extrabold text-orange-400 mt-1">від 0.1%</p>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-4 pt-2">
+            <a href="#calculator" class="bg-[#FF7A00] hover:bg-[#EA580C] text-white font-bold py-3.5 px-8 rounded-lg shadow-lg shadow-orange-500/30 text-center transition-all hover:-translate-y-0.5 active:translate-y-0" id="btn-hero-calc">
+              Розрахувати лізинг
+            </a>
+            <button onclick="openModal('callback')" class="bg-white/10 border border-white/20 hover:bg-white/15 text-white font-bold py-3.5 px-8 rounded-lg text-center transition-all inline-flex justify-center items-center gap-2" id="btn-hero-consult">
+              Отримати консультацію
+              <svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Hero Right Car Image -->
+        <div class="hidden lg:flex lg:col-span-5 relative justify-center">
+          <div class="absolute inset-0 bg-gradient-to-tr from-orange-500/20 to-transparent blur-3xl rounded-full"></div>
+          <div class="relative w-full max-w-lg lg:max-w-none transition-all duration-700 hover:scale-102">
+            <img src="/src/assets/images/orange_leasing_car_1779554852171.png" alt="Orange leasing car" class="w-full h-auto drop-shadow-[0_20px_50px_rgba(251,146,60,0.15)] select-none">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <!-- PAGE 2: ABOUT DETAILS -->
     <div data-page="about" class="page-view hidden transition-all duration-300">
-      <section class="relative bg-gradient-to-br from-slate-950 via-[#1E293B] to-slate-900 text-white py-16 overflow-hidden">
+      <section class="relative bg-gradient-to-br from-slate-950 via-[#1E293B] to-slate-900 text-white pt-24 pb-16 lg:py-16 overflow-hidden">
         <div class="absolute top-12 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative text-center">
           <span class="inline-flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-xs text-orange-300 font-medium uppercase tracking-wider backdrop-blur-sm">
@@ -254,7 +309,7 @@
 
     <!-- PAGE 3: PRODUCTS HEADER -->
     <div data-page="products" class="page-view hidden transition-all duration-300">
-      <section class="relative bg-gradient-to-br from-slate-950 via-[#1E293B] to-slate-900 text-white py-16 overflow-hidden">
+      <section class="relative bg-gradient-to-br from-slate-950 via-[#1E293B] to-slate-900 text-white pt-24 pb-16 lg:py-16 overflow-hidden">
         <div class="absolute top-12 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative text-center">
           <span class="inline-flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-xs text-orange-300 font-medium uppercase tracking-wider backdrop-blur-sm">
@@ -272,7 +327,7 @@
 
     <!-- SUB-PAGE: PASSENGER CARS -->
     <div data-page="products-cars" class="page-view hidden transition-all duration-300">
-      <section class="relative bg-gradient-to-br from-slate-950 via-[#1E293B] to-slate-900 text-white py-16 overflow-hidden">
+      <section class="relative bg-gradient-to-br from-slate-950 via-[#1E293B] to-slate-900 text-white pt-24 pb-16 lg:py-16 overflow-hidden">
         <div class="absolute top-12 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative text-center">
           <span class="inline-flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-xs text-orange-300 font-medium uppercase tracking-wider backdrop-blur-sm">
@@ -374,7 +429,7 @@
 
     <!-- SUB-PAGE: COMMERCIAL VEHICLES -->
     <div data-page="products-commercial" class="page-view hidden transition-all duration-300">
-      <section class="relative bg-gradient-to-br from-slate-950 via-[#1E293B] to-slate-900 text-white py-16 overflow-hidden">
+      <section class="relative bg-gradient-to-br from-slate-950 via-[#1E293B] to-slate-900 text-white pt-24 pb-16 lg:py-16 overflow-hidden">
         <div class="absolute top-12 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative text-center">
           <span class="inline-flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-xs text-orange-300 font-medium uppercase tracking-wider backdrop-blur-sm">
@@ -472,7 +527,7 @@
 
     <!-- SUB-PAGE: AGRICULTURAL MACHINERY -->
     <div data-page="products-agri" class="page-view hidden transition-all duration-300">
-      <section class="relative bg-gradient-to-br from-slate-950 via-[#1E293B] to-slate-900 text-white py-16 overflow-hidden">
+      <section class="relative bg-gradient-to-br from-slate-950 via-[#1E293B] to-slate-900 text-white pt-24 pb-16 lg:py-16 overflow-hidden">
         <div class="absolute top-12 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative text-center">
           <span class="inline-flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-xs text-orange-300 font-medium uppercase tracking-wider backdrop-blur-sm">
@@ -570,17 +625,17 @@
 
     <!-- SUB-PAGE: HEAVY TRUCKS -->
     <div data-page="products-trucks" class="page-view hidden transition-all duration-300">
-      <section class="relative bg-gradient-to-br from-slate-950 via-[#1E293B] to-slate-900 text-white py-16 overflow-hidden">
+      <section class="relative bg-gradient-to-br from-slate-950 via-[#1E293B] to-slate-900 text-white pt-24 pb-16 lg:py-16 overflow-hidden">
         <div class="absolute top-12 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative text-center">
           <span class="inline-flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-xs text-orange-300 font-medium uppercase tracking-wider backdrop-blur-sm">
-            🚛 Вантажний лізинг
+            🚛 Вантажний транспорт та зчіпки
           </span>
           <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mt-4 leading-tight">
-            Лізинг <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Вантажних автомобілів</span>
+            Лізинг <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Вантажного транспорту</span>
           </h1>
           <p class="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto mt-4 leading-relaxed">
-            Великовагові сідельні тягачі, напівпричепи, самоскиди та тенти для перевірених перевізників на вітчизняних напрямках та рейсах у ЄС.
+            Професійні сідельні тягачі для міжобласних чи міжнародних рейсів та спецпричепи за гнучкою лізинговою схемою.
           </p>
         </div>
       </section>
@@ -590,9 +645,9 @@
           <!-- Main description Column -->
           <div class="lg:col-span-8 space-y-8 bg-white border border-slate-100 rounded-2xl p-6 sm:p-8 shadow-sm">
             <div>
-              <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900">Потужне паливо для вашої транспортної компанії</h2>
+              <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900">Ефективні логістичні рішення з мінімальним авансом</h2>
               <p class="text-slate-650 text-xs sm:text-sm mt-3 leading-relaxed">
-                Транспортні перевезення вимагають капітального надійного автопарку, який може експлуатуватися тисячі кілометрів без зупинок. Лізингова лінійка від компанії «ЛізингКом» розроблена для довгострокових міжконтинентальних та внутрішніх перевезень. Ми купуємо нові тягачі українських дилерів або імпортуємо перевірені вживані вантажні машини з Європи, повністю готуючи їх до рейсів.
+                Транспортний бізнес напряму залежить від працездатності автопарку. Наші фінансові програми дають змогу купувати перевірені брендові вантажні машини MAN, DAF або Volvo без заморожування обігових грошей на довгі місяці. Ми пропонуємо індивідуальні графіки фінансування для міжконтинентальних та внутрішніх перевезень. Ми купуємо нові тягачі українських дилерів або імпортуємо перевірені вживані вантажні машини з Європи, повністю готуючи їх до рейсів.
               </p>
             </div>
 
@@ -668,7 +723,7 @@
 
     <!-- SUB-PAGE: SPECIAL MACHINERY -->
     <div data-page="products-special" class="page-view hidden transition-all duration-300">
-      <section class="relative bg-gradient-to-br from-slate-950 via-[#1E293B] to-slate-900 text-white py-16 overflow-hidden">
+      <section class="relative bg-gradient-to-br from-slate-950 via-[#1E293B] to-slate-900 text-white pt-24 pb-16 lg:py-16 overflow-hidden">
         <div class="absolute top-12 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative text-center">
           <span class="inline-flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-xs text-orange-300 font-medium uppercase tracking-wider backdrop-blur-sm">
@@ -690,7 +745,7 @@
             <div>
               <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900">Індивідуальні рішення для забудовників та промисловців</h2>
               <p class="text-slate-650 text-xs sm:text-sm mt-3 leading-relaxed">
-                Дорожня спецтехніка, бетонозмішувачі та автокрани коштують мільйони гривень. Брати банківський кредит за поточними високими відсотками з заставою нерухомості невигідно більшості підприємств. Наша лізингова програма спецтехніки дає можливість отримати важкі екскаватори та підйомники в роботу вже через 3 дні. Ми узгоджуємо специфікації з офіційними постачальниками та беремо всі турботи про фінансування на себе.
+                Дорожня спецтехніка, бетонозмішувачі та автокрани — це дорогі активи з тривалим амортизаційним циклом. Програма лізингу спецтехніки від «ЛізингКом» дозволяє отримати необхідне важке обладнання в експлуатацію вже за кілька днів без вилучення великих сум з обороту вашого будівельного чи промислового бізнесу. Ми пропонуємо індивідуальні графіки фінансування для юридичних осіб та ФОП.
               </p>
             </div>
 
@@ -706,32 +761,32 @@
               </div>
               <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
                 <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Базова ставка</p>
-                <p class="text-lg font-black text-[#FF7A00] mt-1">від 6.9% річних</p>
+                <p class="text-lg font-black text-[#FF7A00] mt-1">від 6.5% річних</p>
               </div>
               <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Дод. застава</p>
-                <p class="text-lg font-black text-[#FF7A00] mt-1">Не потрібна</p>
+                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Об'єкти на вибір</p>
+                <p class="text-lg font-black text-[#FF7A00] mt-1">Нова та б/в</p>
               </div>
             </div>
 
             <!-- Benefits -->
             <div class="pt-6 border-t border-slate-100 space-y-4">
-              <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider">Особливості оформлення спецтехніки:</h3>
+              <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider">Переваги лізингу спецтехніки від «ЛізингКом»:</h3>
               <ul class="space-y-3 text-xs sm:text-sm text-slate-600">
                 <li class="flex items-start gap-2.5">
                   <span class="text-emerald-500 font-bold">✓</span>
-                  <div><b>Прискорена амортизація майна:</b> Клієнт має законодавче право нараховувати прискорену бухгалтерську амортизацію на спецтехніку, що дозволяє суттєво зменшити її балансову вартість до кінця терміну лізингу та зменшити податки.</div>
+                  <div><b>Адаптивні амортизаційні графіки:</b> Можливість формувати нерівномірні або сезонні щомісячні внески залежно від темпів виконання будівельних підрядів чи сезонності робіт вашого підприємства.</div>
                 </li>
                 <li class="flex items-start gap-2.5">
                   <span class="text-emerald-500 font-bold">✓</span>
-                  <div><b>Прозорі договори без КАСКО в банку:</b> Пільгові партнерські тарифи страхування без прихованих комісій банків-посередників. Сама спецтехніка виступає єдиним забезпеченням договору.</div>
+                  <div><b>Допомога при реєстрації та сертифікації:</b> Юристи нашої компанії беруть на себе повний цикл реєстрації спецтехніки в держорганах, проходження техоглядів та оформлення спеціальних дозволів.</div>
                 </li>
               </ul>
             </div>
 
             <div class="bg-orange-50/50 border border-orange-100 rounded-xl p-5 text-xs text-orange-800 space-y-2">
-              <h4 class="font-extrabold text-xs uppercase tracking-wider">🏗️ Рекомендовані бренди спецтехніки для замовлення:</h4>
-              <p>Ми фінансуємо екскаватори, навантажувачі, дорожню техніку провідних виробників: <b>JCB, Caterpillar, Komatsu, Liebherr, Bobcat, Manitou, Volvo Construction, ATLAS, Case</b>.</p>
+              <h4 class="font-extrabold text-xs uppercase tracking-wider">🏗️ Рекомендовані виробники спецтехніки:</h4>
+              <p>Ми фінансуємо оригінальне спецобладнання будь-яких відомих світових брендів: <b>JCB, Caterpillar (CAT), Komatsu, Liebherr, Bobcat, Volvo Construction Equipment, Case, Hitachi, Manitou</b>.</p>
             </div>
           </div>
 
@@ -740,7 +795,7 @@
             <div class="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
               <h3 class="font-extrabold text-slate-900 text-base mb-3">Отримати квоту на Спецтехніку</h3>
               <p class="text-xs text-slate-400 leading-normal mb-5">
-                Залиште контакти для зв'язку. Протягом 15 хвилин ми зателефонуємо з готовим лімітом фінансування за базовими КВЕДами.
+                Проведемо детальний технічний розрахунок платіжної лінійної схеми на спецобладнання будь-якої складності.
               </p>
               <button onclick="openModal('special');" class="w-full bg-[#FF7A00] hover:bg-[#EA580C] text-white font-extrabold text-xs py-3 px-4 rounded-lg shadow-md transition-all active:translate-y-0.5 text-center">
                 Подати швидку заявку
@@ -751,9 +806,9 @@
             </div>
 
             <div class="bg-slate-900 text-white rounded-2xl p-6 border border-slate-800 shadow-md">
-              <h4 class="font-bold text-xs uppercase tracking-wider mb-2 text-orange-400">Швидкий розрахунок</h4>
+              <h4 class="font-bold text-xs uppercase tracking-wider mb-2 text-orange-400">Швидкий калькулятор</h4>
               <p class="text-xs text-slate-300 mb-4 leading-normal">
-                Бажаєте розрахувати платіж самостійно із закладеними тарифами? Перейдіть до нашого лізингового інтерактивного калькулятора.
+                Бажаєте розрахувати платіж самостійно із закладеними тарифами? Скористайтеся нашим детальним скоринговим інтерактивним калькулятором на головній сторінці.
               </p>
               <a href="#calculator" onclick="selectProductType('special')" class="block w-full text-center bg-white/10 hover:bg-white/15 text-white font-extrabold text-xs py-2.5 px-4 rounded-lg border border-white/20 transition-all">
                 Перейти до розрахунку
@@ -763,289 +818,6 @@
         </div>
       </section>
     </div>
-
-    <!-- SUB-PAGE: USED VEHICLES -->
-    <div data-page="products-used" class="page-view hidden transition-all duration-300">
-      <section class="relative bg-gradient-to-br from-slate-950 via-[#1E293B] to-slate-900 text-white py-16 overflow-hidden">
-        <div class="absolute top-12 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative text-center">
-          <span class="inline-flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-xs text-orange-300 font-medium uppercase tracking-wider backdrop-blur-sm">
-            🔄 Вживаний лізинг
-          </span>
-          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mt-4 leading-tight">
-            Лізинг <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Вживаних автомобілів (Б/в)</span>
-          </h1>
-          <p class="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto mt-4 leading-relaxed">
-            Можливість розширення легкового або комерційного автопарку з меншим бюджетом за рахунок автомобілів з оригінальним пробігом після повної перевірки.
-          </p>
-        </div>
-      </section>
-
-      <section class="py-12 bg-slate-50 border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-8 items-start">
-          <!-- Main description Column -->
-          <div class="lg:col-span-8 space-y-8 bg-white border border-slate-100 rounded-2xl p-6 sm:p-8 shadow-sm">
-            <div>
-              <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900">Компромісна фінансова вигода та мінімальні бюджети</h2>
-              <p class="text-slate-650 text-xs sm:text-sm mt-3 leading-relaxed">
-                Купівля абсолютно нового автомобіля з салону часто вимагає занадто високих витрат для малого бізнесу чи новостворених ФОП. Компанія «ЛізингКом» пропонує унікальний фінансовий лізинг уживаного б/в автотранспорту. Ми викупимо обраний вами автомобіль на вторинному ринку у будь-якої фізичної особи чи майданчику Trade-In, переоформимо на себе, застрахуємо та передамо вашому бізнесу в користування зі зручною оплатою рівними частинами.
-              </p>
-            </div>
-
-            <!-- Specs Grid -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-slate-100">
-              <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Аванс від</p>
-                <p class="text-lg font-black text-[#FF7A00] mt-1">20% вартості</p>
-              </div>
-              <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Термін договору</p>
-                <p class="text-lg font-black text-[#FF7A00] mt-1">12 - 48 міс.</p>
-              </div>
-              <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Річна ставка</p>
-                <p class="text-lg font-black text-[#FF7A00] mt-1">8.0% річних</p>
-              </div>
-              <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Максимальний вік</p>
-                <p class="text-lg font-black text-[#FF7A00] mt-1">до 15 років</p>
-              </div>
-            </div>
-
-            <!-- Benefits -->
-            <div class="pt-6 border-t border-slate-100 space-y-4">
-              <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider">Важливі особливості купівлі вживаних ТЗ:</h3>
-              <ul class="space-y-3 text-xs sm:text-sm text-slate-600">
-                <li class="flex items-start gap-2.5">
-                  <span class="text-emerald-500 font-bold">✓</span>
-                  <div><b>Ретельна юридична перевірка:</b> Кожен вживаний автомобіль проходить ретельний закритий аудит за базами МВС України, реєстрами обтяжень, застав та митною історією. Ми ніколи не купуємо проблемні транспортні засоби, що повністю гарантує вам абсолютний юридичний спокій.</div>
-                </li>
-                <li class="flex items-start gap-2.5">
-                  <span class="text-emerald-500 font-bold">✓</span>
-                  <div><b>Прозорі розстрочки без прихованих платежів:</b> Всі витрати на постановку на облік в МРЕО, збір до Пенсійного фонду та страхування одразу включені в щомісячний внесок. Прозоро, стабільно і спокійно.</div>
-                </li>
-              </ul>
-            </div>
-
-            <div class="bg-orange-50/50 border border-orange-100 rounded-xl p-5 text-xs text-orange-800 space-y-2">
-              <h4 class="font-extrabold text-xs uppercase tracking-wider">🔄 Ми підтримуємо фінансування будь-яких авто б/в:</h4>
-              <p>Ви можете обрати будь-який легковий автомобіль чи комерційний бус на сайтах на кшталт Auto.ria або OLC, і після нашого схвалення ми викупимо його для передачі у ваше користування!</p>
-            </div>
-          </div>
-
-          <!-- Sidebar Form Column -->
-          <div class="lg:col-span-4 space-y-6">
-            <div class="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-              <h3 class="font-extrabold text-slate-900 text-base mb-3">Отримати квоту на Вживані авто</h3>
-              <p class="text-xs text-slate-400 leading-normal mb-5">
-                Залиште посилання на вживаний автомобіль або зателефонуйте нашому менеджеру і ми узгодимо її купівлю через 15 хвилин.
-              </p>
-              <button onclick="openModal('passenger');" class="w-full bg-[#FF7A00] hover:bg-[#EA580C] text-white font-extrabold text-xs py-3 px-4 rounded-lg shadow-md transition-all active:translate-y-0.5 text-center">
-                Подати швидку заявку
-              </button>
-              <a href="#/" class="block text-center text-[11px] font-bold text-slate-500 hover:text-slate-800 transition-colors mt-4">
-                ← До списку всіх продуктів
-              </a>
-            </div>
-
-            <div class="bg-slate-900 text-white rounded-2xl p-6 border border-slate-800 shadow-md">
-              <h4 class="font-bold text-xs uppercase tracking-wider mb-2 text-orange-400">Швидкий розрахунок</h4>
-              <p class="text-xs text-slate-300 mb-4 leading-normal">
-                Бажаєте розрахувати платіж самостійно із закладеними тарифами? Перейдіть до нашого лізингового інтерактивного калькулятора.
-              </p>
-              <a href="#calculator" onclick="selectProductType('used')" class="block w-full text-center bg-white/10 hover:bg-white/15 text-white font-extrabold text-xs py-2.5 px-4 rounded-lg border border-white/20 transition-all">
-                Перейти до розрахунку
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- PAGE 4: CLIENTS HEADER & ONBOARDING -->
-    <div data-page="clients" class="page-view hidden transition-all duration-300">
-      <section class="relative bg-gradient-to-br from-slate-950 via-[#1E293B] to-slate-900 text-white py-16 overflow-hidden">
-        <div class="absolute top-12 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative text-center">
-          <span class="inline-flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-xs text-orange-300 font-medium uppercase tracking-wider backdrop-blur-sm">
-            📋 Клієнтський портал
-          </span>
-          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mt-4 leading-tight">
-            Посібник для <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">наших Клієнтів</span>
-          </h1>
-          <p class="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto mt-4 leading-relaxed">
-            Ми зібрали всі необхідні ресурси: покрокові інструкції оформлення угоди, завантаження зразків юридичних договорів, відповіді на часті запитання бізнесу.
-          </p>
-        </div>
-      </section>
-
-      <!-- 4 STEPS ONBOARDING -->
-      <section class="py-16 bg-white border-b border-slate-100">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6">
-          <div class="text-center max-w-2xl mx-auto mb-12">
-            <span class="text-[#FF7A00] font-bold text-xs uppercase tracking-widest">Проста процедура</span>
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">Отримання лізингу за 4 прості кроки</h2>
-          </div>
-          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="bg-slate-50 border border-slate-100 p-6 rounded-2xl relative shadow-sm">
-              <span class="text-3xl font-black text-orange-500 block mb-3">01</span>
-              <h3 class="font-bold text-slate-900 text-sm mb-1.5 uppercase tracking-wide">Швидкий розрахунок</h3>
-              <p class="text-xs text-slate-500 leading-normal">
-                Виберіть бажану модель авто, заповніть калькулятор на головній сторінці сайту та дізнайтеся приблизний щомісячний платіж.
-              </p>
-            </div>
-            <div class="bg-slate-50 border border-slate-100 p-6 rounded-2xl relative shadow-sm">
-              <span class="text-3xl font-black text-orange-500 block mb-3">02</span>
-              <h3 class="font-bold text-slate-900 text-sm mb-1.5 uppercase tracking-wide">Подача документів</h3>
-              <p class="text-xs text-slate-500 leading-normal">
-                Надішліть нам копії базових статутних паперів вашого ФОП / ТОВ. Ми перевіримо та затвердимо квоту лізингу за 15-120 хвилин.
-              </p>
-            </div>
-            <div class="bg-slate-50 border border-slate-100 p-6 rounded-2xl relative shadow-sm">
-              <span class="text-3xl font-black text-orange-500 block mb-3">03</span>
-              <h3 class="font-bold text-slate-900 text-sm mb-1.5 uppercase tracking-wide">Підпис у електронній формі</h3>
-              <p class="text-xs text-slate-500 leading-normal">
-                Укладаємо прозору угоду та реєструємо транспортний засіб самостійно. Оплачуємо рахунки безпосередньо дилерським салонам.
-              </p>
-            </div>
-            <div class="bg-slate-50 border border-slate-100 p-6 rounded-2xl relative shadow-sm">
-              <span class="text-3xl font-black text-orange-500 block mb-3">04</span>
-              <h3 class="font-bold text-slate-900 text-sm mb-1.5 uppercase tracking-wide">Отримання ключів</h3>
-              <p class="text-xs text-slate-500 leading-normal">
-                Забирайте повністю укомплектований, застрахований КАСКО транспортний засіб та випускайте його на службу свого бізнесу!
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- PAGE 5: CONTACTS INTRO -->
-    <div data-page="contacts" class="page-view hidden transition-all duration-300">
-      <section class="relative bg-gradient-to-br from-slate-950 via-[#1E293B] to-slate-900 text-white py-16 overflow-hidden">
-        <div class="absolute top-12 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative text-center">
-          <span class="inline-flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-xs text-orange-300 font-medium uppercase tracking-wider backdrop-blur-sm">
-            📞 Наші контакти
-          </span>
-          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mt-4 leading-tight">
-            Зв'яжіться з компанією <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">«ЛізингКом»</span>
-          </h1>
-          <p class="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto mt-4 leading-relaxed">
-            Потрібна детальна оцінка бізнесу чи індивідуальні консультації? Ми готові допомогти онлайн, за телефоном або особисто у нашому київському офісі.
-          </p>
-        </div>
-      </section>
-    </div>
-
-    <!-- PAGE 6: THANK YOU PAGE (Appears when route is #/thank-you) -->
-    <div data-page="thank-you" class="page-view hidden transition-all duration-300 bg-slate-50 py-16 sm:py-24">
-      <div class="max-w-2xl mx-auto px-4 text-center">
-        <!-- Animated check circle -->
-        <div class="w-20 h-20 bg-emerald-100 border border-emerald-200 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl shadow-md cursor-default transform hover:scale-105 transition-all">
-          ✓
-        </div>
-        
-        <h1 class="text-3xl sm:text-4xl font-black text-slate-900 mb-3 tracking-tight">
-          Дякуємо за вашу заявку!
-        </h1>
-        <p class="text-slate-500 text-sm sm:text-base leading-relaxed max-w-lg mx-auto mb-8">
-          Запит успішно надіслано в інформаційну систему лізингового скорингу «ЛізингКом». Фінансовий спеціаліст вже розпочав перевірку поточних лізингових квот та зателефонує вам для узгодження деталей.
-        </p>
-
-        <!-- Interactive User request details dashboard card -->
-        <div class="bg-white border border-slate-150 rounded-2xl shadow-xl p-6 sm:p-8 text-left max-w-md mx-auto mb-8 border-t-4 border-[#FF7A00]" id="page-thank-you-summary">
-          <!-- Populated dynamically via Javascript with form values -->
-          <p class="font-extrabold text-slate-900 text-xs uppercase tracking-wider mb-3">📒 Резюме вашого запиту:</p>
-          <div class="space-y-2 text-slate-600 text-xs sm:text-sm">
-            <p>• <b>Контактна особа:</b> Шановний клієнт</p>
-            <p>• <b>Тема звернення:</b> Швидкий дзвінок консультанта</p>
-            <p>• <b>Об'єкт фінансування:</b> Буде узгоджено по телефону</p>
-          </div>
-        </div>
-
-        <!-- Step by Step preparation checklist -->
-        <div class="bg-slate-100 border border-slate-200 rounded-xl p-5 text-left text-xs max-w-md mx-auto text-slate-500 space-y-2 mb-8 leading-relaxed">
-          <p class="font-bold text-slate-700 text-xs sm:text-sm mb-2 flex items-center gap-1.5 uppercase tracking-wide">
-            <span>💡</span> Які документи підготувати прямо зараз?
-          </p>
-          <p>Щоб затвердження лізингу пройшло за рекордні 2 години, рекомендуємо тримати у швидкому доступі:</p>
-          <ul class="space-y-1 pl-4 list-disc text-[11px]">
-            <li><b>Для ФОП:</b> паспорт, код ІПН та актуальну pdf-декларацію за останній звітний рік.</li>
-            <li><b>Для ТОВ:</b> електронну виписку з реєстру, Статут ТОВ та спрощений Баланс (форма №1 та №2).</li>
-          </ul>
-        </div>
-
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a href="#/" class="bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-sm py-3.5 px-8 rounded-lg shadow-md transition-all active:translate-y-0.5 text-center w-full sm:w-auto">
-            Повернутися на головну
-          </a>
-          <a href="tel:+380981014983" class="bg-white text-slate-900 border border-slate-250 hover:bg-slate-50 font-bold text-sm py-3.5 px-8 rounded-lg shadow-sm transition-all text-center w-full sm:w-auto inline-flex justify-center items-center gap-1.5">
-            <svg class="w-4.5 h-4.5 text-[#FF7A00]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-            Зателефонувати в офіс
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ============================================== -->
-    <!--            EXISTING DATA PAGES MAPPINGS        -->
-    <!-- ============================================== -->
-
-    <!-- HERO SECTION -->
-    <section data-page="home" class="page-view animate-fade-in-active relative bg-gradient-to-br from-slate-950 via-[#1E293B] to-slate-900 text-white pt-10 pb-20 lg:py-24 overflow-hidden">
-      <!-- Ambient light effect -->
-      <div class="absolute top-12 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 relative grid lg:grid-cols-12 gap-12 items-center">
-        <!-- Hero Left Info -->
-        <div class="lg:col-span-7 space-y-6">
-          <div class="inline-flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 text-xs text-orange-300 font-medium uppercase tracking-wider backdrop-blur-sm">
-            🛡️ Надійне фінансування за ліцензією НБУ
-          </div>
-          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight" id="hero-heading">
-            Вигідний лізинг транспорту та техніки <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">для всього бізнесу</span>
-          </h1>
-          <p class="text-sm sm:text-base text-slate-300 max-w-xl leading-relaxed">
-            Розвивайте свій бізнес без вилучення великих коштів із обігу. Ми купуємо потрібні активи та передаємо їх вам на вигідних умовах зі сплатою впродовж кількох років.
-          </p>
-
-          <div class="grid grid-cols-3 gap-3 md:gap-6 bg-white/5 border border-white/10 rounded-xl p-4 sm:p-5 backdrop-blur-md">
-            <div>
-              <p class="text-[10px] sm:text-xs text-slate-400 uppercase tracking-widest font-semibold">Авансовий платіж</p>
-              <p class="text-lg sm:text-2xl font-extrabold text-orange-400 mt-1">від 10%</p>
-            </div>
-            <div class="border-l border-white/10 pl-4 sm:pl-6">
-              <p class="text-[10px] sm:text-xs text-slate-400 uppercase tracking-widest font-semibold">Термін договору</p>
-              <p class="text-lg sm:text-2xl font-extrabold text-orange-400 mt-1">до 60 міс.</p>
-            </div>
-            <div class="border-l border-white/10 pl-4 sm:pl-6">
-              <p class="text-[10px] sm:text-xs text-slate-400 uppercase tracking-widest font-semibold">Ставка фінансування</p>
-              <p class="text-lg sm:text-2xl font-extrabold text-orange-400 mt-1">від 0.1%</p>
-            </div>
-          </div>
-
-          <div class="flex flex-col sm:flex-row gap-4 pt-2">
-            <a href="#calculator" class="bg-[#FF7A00] hover:bg-[#EA580C] text-white font-bold py-3.5 px-8 rounded-lg shadow-lg shadow-orange-500/30 text-center transition-all hover:-translate-y-0.5 active:translate-y-0" id="btn-hero-calc">
-              Розрахувати лізинг
-            </a>
-            <button onclick="openModal('callback')" class="bg-white/10 border border-white/20 hover:bg-white/15 text-white font-bold py-3.5 px-8 rounded-lg text-center transition-all inline-flex justify-center items-center gap-2" id="btn-hero-consult">
-              Отримати консультацію
-              <svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Hero Right Car Image -->
-        <div class="lg:col-span-5 relative flex justify-center">
-          <div class="absolute inset-0 bg-gradient-to-tr from-orange-500/20 to-transparent blur-3xl rounded-full"></div>
-          <div class="relative w-full max-w-lg lg:max-w-none transition-all duration-700 hover:scale-102">
-            <img src="/src/assets/images/orange_leasing_car_1779554852171.png" alt="Orange leasing car" class="w-full h-auto drop-shadow-[0_20px_50px_rgba(251,146,60,0.15)] select-none">
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- TRUST STATS / BADGES -->
     <section data-page="home" class="page-view animate-fade-in-active max-w-7xl mx-auto px-4 sm:px-6 -mt-10 relative z-20" id="about">
@@ -1263,6 +1035,147 @@
               </a>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOME PRODUCTS QUICK SELECT CAROUSEL -->
+    <section data-page="home" class="page-view animate-fade-in-active py-12 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 fade-in-section" id="home-categories-carousel">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+        <div class="text-left max-w-xl">
+          <span class="text-[#FF7A00] font-bold text-xs uppercase tracking-widest">Категорії фінансування</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">Оберіть потрібне майно</h2>
+          <p class="text-sm text-slate-500 mt-2">Короткий огляд ключових напрямків лізингу для українських підприємств та підприємців.</p>
+        </div>
+        <!-- Scroll controls -->
+        <div class="flex gap-2.5 mt-4 md:mt-0 shadow-sm rounded-full p-1 bg-white border border-slate-100 shrink-0">
+          <button onclick="scrollCategoriesCarousel('left', 'desktop')" class="w-9 h-9 rounded-full bg-white text-slate-500 hover:text-[#FF7A00] hover:bg-slate-50 flex items-center justify-center transition-all cursor-pointer border border-transparent hover:border-slate-100" aria-label="Назад">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+          </button>
+          <button onclick="scrollCategoriesCarousel('right', 'desktop')" class="w-9 h-9 rounded-full bg-white text-slate-500 hover:text-[#FF7A00] hover:bg-slate-50 flex items-center justify-center transition-all cursor-pointer border border-transparent hover:border-slate-100" aria-label="Вперед">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Carousel wrapper -->
+      <div class="relative -mx-4 px-4 sm:mx-0 sm:px-0">
+        <div id="home-slick-carousel" class="flex gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-6 pt-2 select-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          
+          <!-- Card 1: Passenger cars -->
+          <div class="snap-start shrink-0 w-[265px] bg-white border border-slate-150 p-5 rounded-2xl shadow-sm hover:shadow-md hover:border-orange-300 transition-all duration-300 flex flex-col justify-between group cursor-pointer" onclick="goToProductPage('cars')">
+            <div class="space-y-4">
+              <div class="w-11 h-11 bg-orange-50 border border-orange-100/50 rounded-xl flex items-center justify-center text-xl shadow-inner group-hover:scale-105 group-hover:bg-orange-100 transition-all duration-300">
+                🚗
+              </div>
+              <div>
+                <span class="inline-block bg-orange-100/60 text-orange-700 text-[10px] font-bold px-2 py-0.5 rounded-full mb-1">ФОП / ТОВ</span>
+                <h3 class="font-bold text-slate-900 text-sm sm:text-base group-hover:text-[#FF7A00] transition-colors tracking-tight">Легкові авто</h3>
+                <p class="text-xs text-slate-500 mt-2 leading-normal">Сучасні легкові автомобілі для бізнесу та особистих потреб.</p>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-[#FF7A00]">
+              <span class="text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition-all duration-300">
+                Детальніше <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+              </span>
+            </div>
+          </div>
+
+          <!-- Card 2: Commercial cars -->
+          <div class="snap-start shrink-0 w-[265px] bg-white border border-slate-150 p-5 rounded-2xl shadow-sm hover:shadow-md hover:border-orange-300 transition-all duration-300 flex flex-col justify-between group cursor-pointer" onclick="goToProductPage('commercial')">
+            <div class="space-y-4">
+              <div class="w-11 h-11 bg-orange-50 border border-orange-100/50 rounded-xl flex items-center justify-center text-xl shadow-inner group-hover:scale-105 group-hover:bg-orange-100 transition-all duration-300">
+                🚐
+              </div>
+              <div>
+                <span class="inline-block bg-orange-100/60 text-orange-700 text-[10px] font-bold px-2 py-0.5 rounded-full mb-1">Малий бізнес</span>
+                <h3 class="font-bold text-slate-900 text-sm sm:text-base group-hover:text-[#FF7A00] transition-colors tracking-tight">Комерційні авто</h3>
+                <p class="text-xs text-slate-500 mt-2 leading-normal">Надійні фургони, буси та вантажівки для перевезення товарів.</p>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-[#FF7A00]">
+              <span class="text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition-all duration-300">
+                Детальніше <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+              </span>
+            </div>
+          </div>
+
+          <!-- Card 3: Agro machinery -->
+          <div class="snap-start shrink-0 w-[265px] bg-white border border-slate-150 p-5 rounded-2xl shadow-sm hover:shadow-md hover:border-orange-300 transition-all duration-300 flex flex-col justify-between group cursor-pointer" onclick="goToProductPage('agri')">
+            <div class="space-y-4">
+              <div class="w-11 h-11 bg-orange-50 border border-orange-100/50 rounded-xl flex items-center justify-center text-xl shadow-inner group-hover:scale-105 group-hover:bg-orange-100 transition-all duration-300">
+                🚜
+              </div>
+              <div>
+                <span class="inline-block bg-orange-100/60 text-orange-700 text-[10px] font-bold px-2 py-0.5 rounded-full mb-1">Агро сектор</span>
+                <h3 class="font-bold text-slate-900 text-sm sm:text-base group-hover:text-[#FF7A00] transition-colors tracking-tight">Сільгосптехніка</h3>
+                <p class="text-xs text-slate-500 mt-2 leading-normal">Якісна сільськогосподарська техніка для польових робіт.</p>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-[#FF7A00]">
+              <span class="text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition-all duration-300">
+                Детальніше <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+              </span>
+            </div>
+          </div>
+
+          <!-- Card 4: Heavy Trucks -->
+          <div class="snap-start shrink-0 w-[265px] bg-white border border-slate-150 p-5 rounded-2xl shadow-sm hover:shadow-md hover:border-orange-300 transition-all duration-300 flex flex-col justify-between group cursor-pointer" onclick="goToProductPage('trucks')">
+            <div class="space-y-4">
+              <div class="w-11 h-11 bg-orange-50 border border-orange-100/50 rounded-xl flex items-center justify-center text-xl shadow-inner group-hover:scale-105 group-hover:bg-orange-100 transition-all duration-300">
+                🚛
+              </div>
+              <div>
+                <span class="inline-block bg-orange-100/60 text-orange-700 text-[10px] font-bold px-2 py-0.5 rounded-full mb-1">Перевезення</span>
+                <h3 class="font-bold text-slate-900 text-sm sm:text-base group-hover:text-[#FF7A00] transition-colors tracking-tight">Вантажівки</h3>
+                <p class="text-xs text-slate-500 mt-2 leading-normal">Кукурудзовози, сідельні тягачі та напівпричепи для логістики.</p>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-[#FF7A00]">
+              <span class="text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition-all duration-300">
+                Детальніше <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+              </span>
+            </div>
+          </div>
+
+          <!-- Card 5: Special Machinery -->
+          <div class="snap-start shrink-0 w-[265px] bg-white border border-slate-150 p-5 rounded-2xl shadow-sm hover:shadow-md hover:border-orange-300 transition-all duration-300 flex flex-col justify-between group cursor-pointer" onclick="goToProductPage('special')">
+            <div class="space-y-4">
+              <div class="w-11 h-11 bg-orange-50 border border-orange-100/50 rounded-xl flex items-center justify-center text-xl shadow-inner group-hover:scale-105 group-hover:bg-orange-100 transition-all duration-300">
+                🏗️
+              </div>
+              <div>
+                <span class="inline-block bg-orange-100/60 text-orange-700 text-[10px] font-bold px-2 py-0.5 rounded-full mb-1">Інфраструктура</span>
+                <h3 class="font-bold text-slate-900 text-sm sm:text-base group-hover:text-[#FF7A00] transition-colors tracking-tight">Спецтехніка</h3>
+                <p class="text-xs text-slate-500 mt-2 leading-normal">Будівельні екскаватори, крани та комунальна спецтехніка.</p>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-[#FF7A00]">
+              <span class="text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition-all duration-300">
+                Детальніше <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+              </span>
+            </div>
+          </div>
+
+          <!-- Card 6: Used Cars -->
+          <div class="snap-start shrink-0 w-[265px] bg-white border border-slate-150 p-5 rounded-2xl shadow-sm hover:shadow-md hover:border-orange-300 transition-all duration-300 flex flex-col justify-between group cursor-pointer" onclick="goToProductPage('used')">
+            <div class="space-y-4">
+              <div class="w-11 h-11 bg-orange-50 border border-orange-100/50 rounded-xl flex items-center justify-center text-xl shadow-inner group-hover:scale-105 group-hover:bg-orange-100 transition-all duration-300">
+                🔄
+              </div>
+              <div>
+                <span class="inline-block bg-orange-100/60 text-orange-700 text-[10px] font-bold px-2 py-0.5 rounded-full mb-1">Б/В Програма</span>
+                <h3 class="font-bold text-slate-900 text-sm sm:text-base group-hover:text-[#FF7A00] transition-colors tracking-tight">Вживані авто</h3>
+                <p class="text-xs text-slate-500 mt-2 leading-normal">Перевірений вживаний автотранспорт із пробігом в лізинг.</p>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-[#FF7A00]">
+              <span class="text-xs font-bold flex items-center gap-1 group-hover:translate-x-1 transition-all duration-300">
+                Детальніше <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+              </span>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -1516,7 +1429,7 @@
     </section>
 
     <!-- REQUIRED B2B DOCUMENTS TAB SECTION -->
-    <section data-page="clients" class="page-view hidden py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 fade-in-section" id="documents">
+    <section data-page="clients" class="page-view hidden pt-24 pb-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 fade-in-section" id="documents">
       <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
         <span class="text-[#FF7A00] font-bold text-xs uppercase tracking-widest">Максимально лояльні процеси</span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">Які документи потрібні бізнесу?</h2>
@@ -1805,7 +1718,7 @@
     </section>
 
     <!-- CONTACTS SECTION & MAP MOCKUP -->
-    <section data-page="contacts" class="page-view hidden py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 fade-in-section" id="contacts">
+    <section data-page="contacts" class="page-view hidden pt-24 pb-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 fade-in-section" id="contacts">
       <div class="grid lg:grid-cols-12 gap-12 bg-white rounded-3xl border border-slate-100 shadow-xl overflow-hidden">
         
         <!-- Contact details left -->
@@ -2279,6 +2192,29 @@
         }
       }
 
+      // Home Categories Carousel Helpers
+      function scrollCategoriesCarousel(direction, idSuffix = 'desktop') {
+        const carouselId = idSuffix === 'mobile' ? 'home-slick-carousel-mobile' : 'home-slick-carousel';
+        const carousel = document.getElementById(carouselId);
+        if (!carousel) return;
+        
+        let cardWidth = 285; // default fallback (card 265px + gap 20px)
+        const firstCard = carousel.firstElementChild;
+        if (firstCard) {
+          cardWidth = firstCard.getBoundingClientRect().width + 20; // precise dynamic calculation
+        }
+        
+        if (direction === 'left') {
+          carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+        } else {
+          carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        }
+      }
+
+      function goToProductPage(route) {
+        window.location.hash = `#/products/${route}`;
+      }
+
       // Accordion dropdown states toggles
       function toggleAccordion(num) {
         const body = document.getElementById(`faq-body-${num}`);
@@ -2619,11 +2555,13 @@
           const expected = p.getAttribute('data-page');
           if (expected === pageKey) {
             p.classList.remove('hidden');
+            p.style.setProperty('display', '', '');
             setTimeout(() => {
               p.classList.add('animate-fade-in-active');
             }, 10);
           } else {
             p.classList.add('hidden');
+            p.style.setProperty('display', 'none', 'important');
             p.classList.remove('animate-fade-in-active');
           }
         });
